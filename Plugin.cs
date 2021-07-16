@@ -2,7 +2,7 @@
 using Dalamud.Plugin;
 using DalamudPluginProjectTemplate.Attributes;
 
-namespace DalamudPluginProjectTemplate
+namespace xlrandomizer
 {
     public class Plugin : IDalamudPlugin
     {
@@ -11,7 +11,7 @@ namespace DalamudPluginProjectTemplate
         private Configuration config;
         private PluginUI ui;
 
-        public string Name => "Your Plugin's Display Name";
+        public string Name => "xlrandomizer";
 
         public void Initialize(DalamudPluginInterface pluginInterface)
         {
@@ -26,11 +26,10 @@ namespace DalamudPluginProjectTemplate
             this.commandManager = new PluginCommandManager<Plugin>(this, this.pluginInterface);
         }
 
-        [Command("/example1")]
-        [HelpMessage("Example help message.")]
-        public void ExampleCommand1(string command, string args)
-        {
-            // You may want to assign these references to private variables for convenience.
+        [Command("/prand")]
+        [HelpMessage("help message WIP")]
+        public void prand(string command, string args) {
+			// You may want to assign these references to private variables for convenience.
             // Keep in mind that the local player does not exist until after logging in.
             var chat = this.pluginInterface.Framework.Gui.Chat;
             var world = this.pluginInterface.ClientState.LocalPlayer.CurrentWorld.GameData;
